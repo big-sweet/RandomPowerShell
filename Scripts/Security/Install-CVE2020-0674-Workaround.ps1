@@ -1,3 +1,15 @@
+<#
+Run this script with -Undo appended to remove the permissions block after installing the February 2020 patches which should remediate this vulnerability.
+
+Microsoft's workaround comprises setting permissions on jscript.dll such that nobody will be able to read it. This workaround has an expected negative side effect that if you're using a web application that employs legacy JScript (and can as such only be used with Internet Explorer), this application will no longer work in your browser.
+
+There also several other negative side effects:
+Windows Media Player is reported to break on playing MP4 files.
+The sfc (Resource Checker), a tool that scans the integrity of all protected system files and replaces incorrect versions with correct Microsoft versions, chokes on jscript.dll with altered permissions.
+Printing to "Microsoft Print to PDF" is reported to break.
+Proxy automatic configuration scripts (PAC scripts) may not work.
+#>
+
 param (
     [parameter(Mandatory = $false)]$undo = $False
 )
