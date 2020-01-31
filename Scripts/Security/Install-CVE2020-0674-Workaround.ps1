@@ -42,7 +42,7 @@ if ($undo -eq $False) {
         Publish-Log -Message "$TakeOwn" -Source "$ScriptName"
         $Cacls = cacls $env:windir\syswow64\jscript.dll /E /P everyone:N
         Publish-Log -Message "$Cacls" -Source "$ScriptName"
-        takeown /f $env:windir\system32\jscript.dll
+        $TakeOwn = takeown /f $env:windir\system32\jscript.dll
         Publish-Log -Message "$TakeOwn" -Source "$ScriptName"
         $Cacls = cacls $env:windir\system32\jscript.dll /E /P everyone:N
         Publish-Log -Message "$Cacls" -Source "$ScriptName"
