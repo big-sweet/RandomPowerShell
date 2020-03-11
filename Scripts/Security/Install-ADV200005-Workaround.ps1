@@ -1,4 +1,6 @@
 <#
+https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV200005
+
 EXAMPLE:
 
 cd C:\scripts
